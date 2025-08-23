@@ -1,0 +1,6 @@
+{
+  "title": "Big Five",
+  "count_is": "count is {{count}}",
+  "edit_and_save": "Edit src/App.tsx and save to test HMR",
+  "click_logos": "Click on the Vite and React logos to learn more"
+}
