@@ -1,4 +1,3 @@
-import { type JSX } from 'react';
 import { ShoppingBagIcon } from '@heroicons/react/24/outline';
 
 type Props = {
@@ -6,7 +5,7 @@ type Props = {
   ariaLabel?: string;
 };
 
-export default function CartButton({ onClick, ariaLabel = 'Cart' }: Props): JSX.Element {
+export default function CartButton({ onClick, ariaLabel = 'Cart' }: Props) {
   return (
     <button
       type="button"

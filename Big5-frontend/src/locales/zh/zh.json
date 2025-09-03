@@ -2,5 +2,19 @@
   "title": "大五人格",
   "count_is": "计数为 {{count}}",
   "edit_and_save": "编辑 src/App.tsx 并保存以测试 HMR",
-  "click_logos": "点击 Vite 和 React 标志以了解更多"
+  "click_logos": "点击 Vite 和 React 标志以了解更多",
+  "components": {
+    "navBar": {
+      "title": "大五人格",
+      "about": "关于",
+      "contact": "联系"
+    },
+    "itemNav": {
+      "home": "首页",
+      "features": "功能",
+      "pricing": "价格",
+      "about": "关于",
+      "contact": "联系"
+    }
+  }
 }

@@ -2,5 +2,19 @@
   "title": "Big Five",
   "count_is": "count is {{count}}",
   "edit_and_save": "Edit src/App.tsx and save to test HMR",
-  "click_logos": "Click on the Vite and React logos to learn more"
+  "click_logos": "Click on the Vite and React logos to learn more",
+  "components": {
+    "navBar": {
+      "title": "Big Five",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "itemNav": {
+      "home": "Home",
+      "features": "Features",
+      "pricing": "Pricing",
+      "about": "About",
+      "contact": "Contact"
+    }
+  }
 }

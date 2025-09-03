@@ -1,0 +1,20 @@
+{
+  "title": "大五人格",
+  "count_is": "計數為 {{count}}",
+  "edit_and_save": "編輯 src/App.tsx 並儲存以測試 HMR",
+  "click_logos": "點擊 Vite 和 React 標誌以了解更多",
+  "components": {
+    "navBar": {
+      "title": "大五人格",
+      "about": "關於",
+      "contact": "聯絡"
+    },
+    "itemNav": {
+      "home": "首頁",
+      "features": "功能",
+      "pricing": "價格",
+      "about": "關於",
+      "contact": "聯絡"
+    }
+  }
+}
