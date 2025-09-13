@@ -5,7 +5,6 @@ type NavItem = { id: string; label: string; href: string };
 export default function ItemNav() {
   const { t } = useTranslation();
 
-  // Items belong to ItemNav itself
   const items: NavItem[] = [
     { id: 'home', label: t('components.itemNav.home', 'Home'), href: '#home' },
     { id: 'features', label: t('components.itemNav.features', 'Features'), href: '#features' },
@@ -15,14 +14,15 @@ export default function ItemNav() {
   ];
 
   return (
-    <nav className="w-full bg-white h-14 z-40 border-b border-gray-200">
-      <div className="max-w-full overflow-x-auto h-full">
-        <ul className="flex gap-4 px-4 h-full items-center justify-center whitespace-nowrap">
+    <nav className="item-nav w-full bg-white border-b border-gray-200" style={{ height: 'var(--itemnav-height, 56px)' }}>
+      <div className="max-w-full overflow-x-auto h-full flex items-center">
+        <ul className="flex gap-4 px-4 h-full items-center justify-center whitespace-nowrap mx-auto">
           {items.map((it) => (
-            <li key={it.id}>
+            <li key={it.id} className="h-full flex items-center">
               <a
                 href={it.href}
-                className="inline-block px-3 py-1 rounded-md text-sm text-gray-700"
+                className="h-full flex items-center px-3 rounded-md text-sm text-gray-800 hover:bg-gray-50 no-underline"
+                style={{ textDecoration: 'none' }}
               >
                 {it.label}
               </a>

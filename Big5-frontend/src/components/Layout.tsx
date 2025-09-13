@@ -2,12 +2,15 @@ import React from 'react';
 import NavBar from './navBar/navBar';
 import ItemNav from './itemNav/itemNav';
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+// Pass mainClassName when you want page-level container styles
+export default function Layout({ children, mainClassName = '' }: { children: React.ReactNode; mainClassName?: string }) {
   return (
     <>
-      <NavBar />
-      <ItemNav />
-      <main className="max-w-6xl mx-auto p-6">{children}</main>
+      <div className="sticky top-0 z-50">
+        <NavBar />
+        <ItemNav />
+      </div>
+      <main className={mainClassName}>{children}</main>
     </>
   );
 }

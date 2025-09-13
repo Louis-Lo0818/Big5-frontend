@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from './languageSelector';
 import CartButton from './cartButton';
+import './css/navBar.css';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 export default function NavBar() {
@@ -9,7 +10,7 @@ export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white sticky top-0 z-50 w-full left-0 border-b border-gray-200">
+    <header className="nav-bar bg-white z-50 w-full left-0 border-b border-gray-200">
       <div className="w-full px-0 relative">
         <div className="flex items-center h-16">
           <div className="flex-1 pl-4" />

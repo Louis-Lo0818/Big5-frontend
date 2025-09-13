@@ -1,0 +1,35 @@
+/* Full-bleed (edge-to-edge) carousel */
+.carousel-full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* progress bar container (bottom) */
+.carousel-progress-anim {
+  position: absolute;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  height: 4px;
+  background: rgba(0,0,0,0.06);
+  z-index: 80;
+  border-radius: 9999px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.carousel-progress-anim::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, rgba(107,114,128,0.95), rgba(79,70,229,0.9));
+  animation: carousel-progress var(--interval, 3000ms) linear forwards;
+}
+@keyframes carousel-progress { from { width: 0%; } to { width: 100%; } }
+
+/* Keep captions above */
+.carousel-caption { z-index: 90; }

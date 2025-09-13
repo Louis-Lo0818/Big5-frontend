@@ -1,0 +1,10 @@
+/* Force navbar links to be black and without underline */
+.nav-bar a {
+  color: #111 !important;
+  text-decoration: none !important;
+}
+.nav-bar a:hover,
+.nav-bar a:focus {
+  color: #111 !important;
+  text-decoration: none !important;
+}
