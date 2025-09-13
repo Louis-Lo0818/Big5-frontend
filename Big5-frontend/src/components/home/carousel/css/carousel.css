@@ -1,4 +1,5 @@
-/* Full-bleed (edge-to-edge) carousel */
+-frontend/Big5-frontend/src/components/home/carousel/css/carousel.css
+/* Full-bleed wrapper (use on the carousel container) */
 .carousel-full-bleed {
   width: 100vw;
   position: relative;
@@ -8,28 +9,53 @@
   margin-right: -50vw;
 }
 
-/* progress bar container (bottom) */
-.carousel-progress-anim {
-  position: absolute;
-  left: 0.5rem;
-  right: 0.5rem;
-  bottom: 0.5rem;
-  height: 4px;
-  background: rgba(0,0,0,0.06);
-  z-index: 80;
-  border-radius: 9999px;
-  overflow: hidden;
-  pointer-events: none;
-}
-.carousel-progress-anim::before {
-  content: "";
-  display: block;
+/* Ensure carousel and slides occupy wrapper height */
+.carousel-full-bleed,
+.carousel-full-bleed .carousel,
+.carousel-full-bleed .carousel-inner,
+.carousel-full-bleed .carousel-item {
   height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, rgba(107,114,128,0.95), rgba(79,70,229,0.9));
-  animation: carousel-progress var(--interval, 3000ms) linear forwards;
 }
-@keyframes carousel-progress { from { width: 0%; } to { width: 100%; } }
 
-/* Keep captions above */
-.carousel-caption { z-index: 90; }
+/* Images fill slide */
+.carousel-full-bleed .carousel-item > img,
+.carousel-full-bleed .carousel-item picture > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Controls: always visible gray circular background and larger hit area */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(107, 114, 128, 0.162);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  background-size: 1.2rem 1.2rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 80ms ease;
+  box-sizing: border-box;
+  padding: 0.3rem;
+}
+
+/* control anchors: position, z-index, margins */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+  z-index: 120;
+  position: absolute;
+  pointer-events: auto;
+}
+.carousel-control-prev { left: 1rem; }
+.carousel-control-next { right: 1rem; }
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  background-color: rgba(75, 85, 99, 0.409);
+}

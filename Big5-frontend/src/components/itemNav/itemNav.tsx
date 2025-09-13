@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import "./css/itemNav.css";
 
 type NavItem = { id: string; label: string; href: string };
 
@@ -16,7 +17,10 @@ export default function ItemNav() {
   return (
     <nav className="item-nav w-full bg-white border-b border-gray-200" style={{ height: 'var(--itemnav-height, 56px)' }}>
       <div className="max-w-full overflow-x-auto h-full flex items-center">
-        <ul className="flex gap-4 px-4 h-full items-center justify-center whitespace-nowrap mx-auto">
+        <ul
+          className="flex gap-4 px-4 h-full items-center justify-center whitespace-nowrap mx-auto"
+          style={{ marginBottom: '0rem' }}
+        >
           {items.map((it) => (
             <li key={it.id} className="h-full flex items-center">
               <a

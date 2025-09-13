@@ -6,47 +6,47 @@ import CarouselImage from './carouselImage';
 
 type Props = {
   height?: number;
-  intervalMs?: number;
 };
 
-export default function MyCarousel({ height = 610, intervalMs = 3000 }: Props) {
-  const [index, setIndex] = useState(0);
+export default function MyCarousel({ height = 610 }: Props) {
+  const [index, setIndex] = useState<number>(0);
 
-  const slides = [
-    { key: 0, text: 'First slide', title: 'First slide label', body: 'Nulla vitae elit libero, a pharetra augue mollis interdum.' },
-    { key: 1, text: 'Second slide', title: 'Second slide label', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-    { key: 2, text: 'Third slide', title: 'Third slide label', body: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur.' },
-  ];
+  const handleSelect = (selectedIndex: number | null) => {
+    if (typeof selectedIndex === 'number') setIndex(selectedIndex);
+  };
 
   return (
     <div className="carousel-full-bleed" style={{ height: `${height}px`, position: 'relative' }}>
       <Carousel
         activeIndex={index}
-        onSelect={(i) => setIndex(i)}
-        interval={intervalMs}
-        pause={false}
+        onSelect={handleSelect}
         controls
-        indicators
+        indicators={true}   // make sure indicators are on
         className="h-full"
-        style={{ height: '100%' }}
       >
-        {slides.map((s) => (
-          <Carousel.Item key={s.key} className="h-full" style={{ height: '100%' }}>
-            <CarouselImage text={s.text} />
-            <Carousel.Caption>
-              <h3>{s.title}</h3>
-              <p>{s.body}</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        ))}
-      </Carousel>
+        <Carousel.Item className="h-full">
+          <CarouselImage text="First slide" />
+          <Carousel.Caption>
+            <h3>First slide label</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
 
-      <div
-        key={index}
-        className="carousel-progress-anim"
-        style={{ ['--interval' as any]: `${intervalMs}ms` }}
-        aria-hidden
-      />
+        <Carousel.Item className="h-full">
+          <CarouselImage text="Second slide" />
+          <Carousel.Caption>
+            <h3>Second slide label</h3>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item className="h-full">
+          <CarouselImage text="Third slide" />
+          <Carousel.Caption>
+            <h3>Third slide label</h3>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
     </div>
   );
 }
