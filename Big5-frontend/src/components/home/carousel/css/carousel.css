@@ -59,3 +59,37 @@
 .carousel-control-next:hover .carousel-control-next-icon {
   background-color: rgba(75, 85, 99, 0.409);
 }
+
+.carousel-indicators {         /* override any hidden rules */
+  gap: 0.5rem;
+  z-index: 140;                     /* above slides/captions/controls */
+  pointer-events: auto;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Style indicator dots/bars */
+.carousel-indicators button,
+.carousel-indicators [data-bs-target] {
+  width: 60px;
+  height: 2px;
+  background-color: rgba(17, 24, 39, 0.9);
+  border: 0;
+  opacity: 0.3 !important;
+  margin: 0 6px;
+  transition: transform 120ms ease, background-color 120ms ease;
+}
+
+/* Active indicator */
+.carousel-indicators .active,
+.carousel-indicators button.active,
+.carousel-indicators [aria-current="true"] {
+  opacity: 1 !important;
+  background-color: rgba(17, 24, 39, 0.9);
+  transform: scale(1.1);
+}
+
+/* Make sure the carousel establishes positioning context (Bootstrap usually does) */
+.carousel-full-bleed .carousel {
+  position: relative;
+}
